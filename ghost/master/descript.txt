@@ -1,0 +1,13 @@
+charset,Shift_JIS
+
+craftman,nanachi
+craftmanw,ななっち
+craftmanurl,http://ukananachi.blog98.fc2.com/
+
+name,奏でる日常の音色
+type,ghost
+
+sakura.name,かなで
+kero.name,メニューボード
+
+shiori,satori.dll

@@ -1,0 +1,4 @@
+charset, Shift_JIS
+type,ghost
+name,‘t‚Å‚é“úí‚Ì‰¹F
+directory,kanade_2nd

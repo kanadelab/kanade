@@ -1,0 +1,84 @@
+＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
+＃
+＃　　　奏でる日常の音色　里々設定ファイル
+＃
+＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
+
+
+＠portalrootbutton.caption
+このゴースト関連のリンク(&P)
+
+＠recommendrootbutton.caption
+お茶の情報サイト(&R)
+
+＠kero.recommendbuttoncaption
+￥１のおすすめ(&R)
+
+＠updatebutton.caption
+オンラインアップデート(&U)
+
+＠vanishbutton.caption
+アンインストール(&F)
+
+＠readmebutton.caption
+readme.txtの表示(&R)
+
+＃消滅指示制限　1:消滅指示可　0:消滅指示不可
+＠vanishbutton.visible
+1 
+
+
+＃変更中
+＠homeurl
+http://nanachi.sakura.ne.jp/kanade_2nd/
+
+＠通常更新先
+http://nanachi.sakura.ne.jp/kanade/
+
+＠旧更新先
+http://hope.freespace.jp/nanachi/kanade/
+
+＠username
+（ユーザ名） 
+
+＊コメント
+
+　URL一覧は…… 
+
+　１行目がサイト名 
+　２行目がジャンプ先URL 
+　３行目がバナーURL（省略可） 
+　４行目以降はジャンプ時に表示される会話文（省略可） 
+
+
+＃＊sakura.recommendsites
+＃作者のサイト。ここを使わずに、sakura.portalsitesにまとめてしまうのも一つの方法。 
+＃http://～ 
+＃バナー（あれば） 
+
+
+＊sakura.portalsites
+作者ブログ（更新履歴など）
+http://ukananachi.blog98.fc2.com/
+
+＊sakura.portalsites
+奏のTwitter
+https://twitter.com/#!/kanade_ghost
+
+＊sakura.recommendsites
+お茶百科
+http://ocha.tv/
+
+＊sakura.recommendsites
+日本紅茶協会
+http://www.tea-a.gr.jp/knowledge/
+
+
+
+＃＊sakura.portalsites
+＃-
+＃「-」といれることでリンクメニューに罫線を引くことができます。 
+
+
+
+＃更新場所チェックの機能が増えました。

@@ -1,0 +1,14 @@
+//バルーン　テスト
+[test]
+position,righttop
+skin,testbln.png
+font.color,101010
+offset.x,-100
+offset.y,100
+disparea.top,4
+disparea.left,8
+disparea.bottom,19
+disparea.right,290
+clickerase,off
+dragmove.horizontal,on
+dragmove.vertical,on

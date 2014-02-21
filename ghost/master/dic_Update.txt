@@ -1,0 +1,121 @@
+＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
+＃
+＃　　　奏でる日常の音色　アップデートノーティス管理
+＃
+＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
+
+
+＊アップデートログ表示
+＄引数区切り追加	（sprintf,%c,5）
+：\_q\n◆今回のアップデート
+
+（when,（count（b5）（Ｒ１）（b5）dic_BootEnd.txt）!=0,起動・終了トークの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Change.txt）!=0,ゴースト切り替えトークの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Coomon.txt）!=0,機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Event.txt）!=0,イベントトークの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_ExEvent）!=0,時期限定イベントの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_CallExEvent.txt）!=0,時期限定イベントの調整\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Communicate.txt）!=0,コミュニケートの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_FortuneCookie.txt）!=0,フォーチュンクッキーの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Function.txt）!=0,内部処理の調整\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Launcher.txt）!=0,ランチャ機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_LuckySweets.txt）!=0,ラッキーお菓子の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Menu.txt）!=0,メインメニュー・設定の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_MenuBoardSurface.txt）!=0,メニューボードサーフェスの調整\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_MusicPlayer.txt）!=0,音楽再生機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Timer.txt）!=0,タイマー機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_News.txt）!=0,ニュース機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_NormalTalk.txt）!=0,雑談トークの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Response.txt）!=0,さわり反応の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_CallResponse.txt）!=0,さわり反応の調整\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_SaoriEvent.txt）!=0,イベント処理の調整\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Search.txt）!=0,ウェブ検索機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_String.txt）!=0,起動・右クリックメニューの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_SweetsTalk.txt）!=0,お菓子のトークの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_TeaParty.txt）!=0,お茶会の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_TeaPartyUser.txt）!=0,ユーザさんとのお茶会の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_TeaTalk.txt）!=0,お茶のトークの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Update.txt）!=0,アップデート通知機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Time.txt）!=0,時報トークの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Tips.txt）!=0,メニューボードの表示内容の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_Weather.txt）!=0,天気予報機能の更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）.dll）!=0,ライブラリの更新\n）φ
+（when,（count（b5）（Ｒ１）（b5）satori_conf.txt）!=0,内部設定の調整\n）φ
+（when,（count（b5）（Ｒ１）（b5）descript.txt）!=0,内部設定の調整\n）φ
+（when,（count（b5）（Ｒ１）（b5）dic_ShortcutKey.txt）!=0,ショートカットキーの更新\n）φ
+
+
+◆特記事項メモ
+
+2014.2.17
+一部のゴーストへの切替時にエラーが発生する問題を修正しました。
+
+＃（call,アップデートログ表示関数,トーク更新）φ
+＃（call,アップデートログ表示関数,コミュニケート更新）φ
+＃（call,アップデートログ表示関数,触り反応更新）φ
+＃（call,アップデートログ表示関数,問題の修正）φ
+
+
+＠アップデートログ表示関数
+（when,（変数「（Ａ０）」の存在）==0||（（Ａ０））<（_（Ａ０））,（Ａ０）（set,（Ａ０）,（_（Ａ０）））\n）
+
+＊最新アップデートノーティス
+＄_トーク更新	０
+＄_コミュニケート更新	０
+＄_触り反応更新	０
+
+
+
+＃　　更新回数
+
+＠_トーク更新
+０
+
+＠_コミュニケート更新
+０
+
+＠_触り反応更新
+０
+
+＠_問題の修正
+０
+
+
+＊更新をリスト化しよう。ファイル名一覧
+satori_conf.txt　内部設定の調整
+descript.txt　基本データの調整
+dic_BootEnd.txt　起動・終了トークの更新
+dic_Change.txt　ゴースト切り替えトークの更新
+dic_Common.txt　機能の更新
+dic_Event.txt　イベントトークの更新
+dic_Communicate.txt　コミュニケートの更新
+dic_ExEvent1.txt　時期限定イベントの更新
+dic_ExEvent2.txt
+dic_ExEvent3.txt
+dic_ExEvent4.txt
+dic_ExEvent5.txt
+dic_ExEventCall.txt　時期限定イベントの調整
+dic_FortuneCookie.txt　フォーチュンクッキー機能の更新
+dic_Function.txt　内部処理の更新
+dic_Launcher.txt　ランチャ機能の更新
+dic_LuckySweets.txt　ラッキーお菓子機能の更新
+dic_Menu.txt　メニューの更新
+dic_MenuBoardSurface.txt　メニューボードサーフェスの調整
+dic_MusicPlayer.txt　音楽再生機能の更新
+dic_News.txt　ニュース機能の更新
+dic_NormalTalk.txt　雑談トークの更新
+dic_Response.txt　さわり反応の更新
+dic_ResponceCall.txt　さわり反応の調整
+dic_SaoriEvent.txt　イベント処理の調整
+dic_Search.txt　ウェブ検索機能の更新
+dic_String.txt　右クリックメニューの更新
+dic_TeaParty.txt　お茶会の更新
+dic_TeaPartyUser.txt　ユーザさんとのお茶会の更新
+dic_TeaTalk.txt　お茶のトークの更新
+dic_Update.txt　
+dic_Time.txt　時報トークの更新
+dic_Tips.txt　メニューボードの内容更新
+dic_Weather.txt　天気予報の更新
+
+
+.dll　内部ライブラリの更新
