@@ -1,0 +1,35 @@
+＃他のゴーストのトークを受信
+＠ヤンデレモード機能初期化
+\![set,otherghosttalk,true]
+
+
+＃OnOtherGhostTalkに通知される。
+＃r0	ゴースト名
+＃r1	さくら名
+＃r2	トーク状態
+＃r3	向こうのイベント識別子
+＃r4	スクリプト内容
+＃r5	Reference群をバイト値１で区切り
+
+＃＊OnOtherGhostTalk
+＃：（Ｒ１）
+＃（Ｒ３）
+＃（nop,（split,（Ｒ５）,（バイト値,１）））
+＃＞（Ｒ１）（Ｓ３）（Ｓ４）つつかれ	（Ｒ３）==OnMouseDoubleClick
+＃＞（Ｒ１）（Ｓ３）（Ｓ４）なでられ	（Ｒ３）==OnMouseMove
+
+
+＃他ゴーストに発生したイベントの識別
+＊OnOtherGhostTalk	（特殊モード）==yd
+＃＄ydターゲット	（Ｒ１）
+（nop,（split,（Ｒ５）,（バイト値,１）））
+＃たまによく発生する
+＞他人コミュニケート	（Ｒ３）==OnCommunicate
+＞処理終了	（乱数１～３）!=１
+＞他人（Ｓ３）（Ｓ４）つつかれ	（Ｒ３）==OnMouseDoubleClick
+＞他人（Ｓ３）（Ｓ４）なでられ	（Ｒ３）==OnMouseMove
+＞他人トーク	（Ｒ３）==OnAITalk
+
+
+＊他人コミュニケート
+：\![raise,OnCommunicate,ヤンデレ,（Ｓ１）]
