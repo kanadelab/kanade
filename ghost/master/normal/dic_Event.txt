@@ -88,13 +88,7 @@
 ：（０）（Ｒ０）個のファイルを確認。\w5
 （５）ちゃちゃっと済ませちゃいますかー。
 
-＊OnUpdateComplete
-＄nop	（list,clear,ねとわく更新エラーログ発生日時）
-＄nop	（list,clear,ねとわく更新エラーログ要因）
-＄nop	（list,clear,選択肢エラーログ発生日時）
-＄nop	（list,clear,選択肢エラーログラベル）
-＞ネットワーク更新（Ｒ０）
-：（０）成功したけど「（Ｒ０）」だってさ。
+
 
 ＊OnUpdateFailure
 ＄nop	（when,（Ｒ０）!=none&&（Ｒ０）!=artificial,（アップデート失敗ログ作成））

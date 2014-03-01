@@ -52,6 +52,14 @@
 ＄nop	（when,（list,size,ねとわく更新エラーログ要因）>5,（list,pop_back,ねとわく更新エラーログ要因））
 
 
+＊OnUpdateComplete
+＄nop	（辞書フォルダ設定）
+＄nop	（list,clear,ねとわく更新エラーログ発生日時）
+＄nop	（list,clear,ねとわく更新エラーログ要因）
+＄nop	（list,clear,選択肢エラーログ発生日時）
+＄nop	（list,clear,選択肢エラーログラベル）
+＞ネットワーク更新（Ｒ０）
+：（０）成功したけど「（Ｒ０）」だってさ。
 
 ＊ネットワーク更新timeout
 ：（４）タイムアウトだって…
@@ -159,6 +167,7 @@
 ＊OnSatoriLoad
 ＄nop	（下着設定）
 ＄nop	（メニューボードサーフェス設定）
+＄nop	（core,set_shell,（現在のシェルのパス））
 ＄トークモード	ランダムトーク
 ＄文「ランダムトーク」の重複回避	有効、起動中
 ＄起動毎好感度	０
@@ -204,7 +213,6 @@
 ＄全タイマ解除	実行
 ＄トーク予約のキャンセル	＊
 ＄nop	（music,volume,（音量））
-＄nop	（core,set_shell,（現在のシェルのパス））
 ＄デフォルトサーフェス1	（core,translate_num,（メニューボードサーフェス））
 ＄終了日からの経過日数=（time_check,how_many_days,（終了年）,（終了月）,（終了日））*-1
 ＄nop	（天気予報トークタイマ設定）
