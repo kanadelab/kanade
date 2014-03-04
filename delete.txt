@@ -20,3 +20,6 @@ ghost\master\dic_import.txt
 ghost\master\dic_ExEvent.txt
 ghost\master\replace.txt
 ghost\master\replace_after.txt
+ghost\master\dic_yd.txt
+ghost\master\dic_ds.txt
+ghost\master\dic_Response.txt
