@@ -11,8 +11,8 @@
 ＠recommendrootbutton.caption
 お茶の情報サイト(&R)
 
-＠kero.recommendbuttoncaption
-￥１のおすすめ(&R)
+＃＠kero.recommendbuttoncaption
+＃￥１のおすすめ(&R)
 
 ＠updatebutton.caption
 オンラインアップデート(&U)
