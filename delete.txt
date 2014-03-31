@@ -23,3 +23,6 @@ ghost\master\replace_after.txt
 ghost\master\dic_yd.txt
 ghost\master\dic_ds.txt
 ghost\master\dic_Response.txt
+ghost\master\dic_NormalTalk.txt
+ghost\master\dic_SweetsTalk.txt
+ghost\master\dic_TeaTalk.txt

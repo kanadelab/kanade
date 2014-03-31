@@ -93,7 +93,8 @@ nanachi@hotmail.co.jp
 http://flower.girly.jp/
 http://azukifont.com/
 http://pocket-se.info/
-
+http://www.vector.co.jp/soft/data/writing/se244261.html
+http://www.civillink.net/
 
 【ゴースト制作に携わっている方】
 イチボシ 様（マスターシェルを書いてくださいました）

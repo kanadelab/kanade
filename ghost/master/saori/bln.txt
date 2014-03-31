@@ -12,3 +12,11 @@ disparea.right,290
 clickerase,off
 dragmove.horizontal,on
 dragmove.vertical,on
+
+[loading_spring]
+position,rightbottom
+skin,loading_spring.png
+offset.x,-10
+offset.y,-10
+crickerase,off
+life,orusuban
