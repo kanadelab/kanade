@@ -25,7 +25,7 @@
 
 ＊お花見からモード変更
 ：（０）うん。\w7
-（５）それじゃあ、\w5お店に帰ろっか。\x\![raise,OnHanamiModeEnding]
+（５）それじゃあ、\w5お店に帰ろっか。\x\1\![bind,アクセサリ,CLOSED,0]\![raise,OnHanamiModeEnding]
 
 ＊OnHanamiModeEnding
 ＄特殊モード名前	（変更前特殊モード名前）

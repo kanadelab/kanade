@@ -27,3 +27,7 @@ menu.separator.color.b,0
 menu.sidebar.bitmap.filename,menus.png
 menu.background.bitmap.filename,menu1.png
 menu.foreground.bitmap.filename,menu2.png
+
+kero.menu,hidden
+kero.bindgroup100.name,アクセサリ,CLOSED
+kero.bindgroup100.default,0

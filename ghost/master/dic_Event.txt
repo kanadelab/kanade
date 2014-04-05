@@ -219,7 +219,7 @@
 ＄nop	（when,（天気予報自動受信設定）==一時間おき,（起動時天気予報情報確認））
 ＄nop	（when,（ニュース自動受信設定）==一時間おき,（起動時ニュース更新））
 ＄ノーコアモード	（when,（core）==kanade_core_ok,無効,有効）
-\1\![set,otherghosttalk,true]
+\1\![bind,アクセサリ,CLOSED,0]\![set,otherghosttalk,true]
 ＞起動時更新チェック	（更新自動受信設定）==起動時
 ＞開始処理の続き
 

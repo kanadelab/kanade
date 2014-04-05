@@ -20,7 +20,7 @@
 かんたんな食べ物に、\w6お茶と、\w6しきもの！\w9　おっけー。\w9\w9
 
 さぁ行こう\w2行こう！\x
-\![raise,OnHanamiMode]
+\1\![bind,アクセサリ,CLOSED,1]\![raise,OnHanamiMode]
 
 ＊OnHanamiMode
 ＄nop	（when,（変数「特殊モード名前」の存在）,（set,変更前特殊モード名前,（特殊モード名前）））

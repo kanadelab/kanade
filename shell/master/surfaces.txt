@@ -2941,3 +2941,14 @@ element2,overlay,surface1028.png,55,22
 element3,overlay,surface1027.png,62,111
 element4,overlay,surface1006.png,0,0
 }
+
+descript
+{
+version,1
+}
+
+surface.append10,surface.append1100,surface.append1104-1140,surface.append1200,surface.append1204-1209,surface.append1213-1240,surface.append1300,surface.append1304-1308,surface.append1310,surface.append1313-1340,surface.append1400,surface.append1404-1408,surface.append1411,surface.append1413-1440,surface.append1500,surface.append1502-1508,surface.append1512-1540,surface.append1600,surface.append1601,surface.append1603-1608,surface.append1613-1640
+{
+animation100.interval,bind
+animation100.pattern0,bind,1022,0,34,23
+}
