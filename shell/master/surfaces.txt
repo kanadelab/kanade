@@ -1319,7 +1319,6 @@ element3,overlay,surface1027.png,62,111
 element4,overlay,surface1001.png,0,0
 }
 
-}
 
 #X
 
