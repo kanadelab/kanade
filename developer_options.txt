@@ -13,6 +13,7 @@ ghost\master\kanade_core.txt,nonar,noupdate
 .gitignore,nonar,noupdate
 .git,nonar,noupdate
 shell\mini_kanade,nonar,noupdate
+ghost\master\dic_satolist_debug.txt,nonar,noupdate
 
 
 //セーブデータの除外設定。narや、更新ファイル作成時に巻き込みたくないファイルの名前を書く。
