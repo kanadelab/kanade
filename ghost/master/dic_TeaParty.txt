@@ -319,6 +319,7 @@ Second Flush
 \![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaPartyEnd,（実行したお茶会のバージョン）]
 
 ＊新お茶会終了
+＄お茶会最終日	（現在年）（現在月）（現在日）
 ：\w9（０）ごちそうさま。\w9\w9
 
 （５）うーん、\w3今日は楽しかった！\w7
