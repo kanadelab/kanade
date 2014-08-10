@@ -1,13 +1,13 @@
+ghost\master\satorite.exe
+ghost\master\satorite.dat
+ghost\master\‚ê‚µ‚Î.exe
+ghost\master\TeaTime_ReadMe.txt
 ghost\master\dic_Tolk.txt
 ghost\master\delete.txt
 ghost\master\tork.txt
-ghost\master\satorite.dat
 ghost\master\satorite.txt
-ghost\master\satorite.exe
 ghost\master\‚ê‚µ‚Î.txt
-ghost\master\‚ê‚µ‚Î.exe
 ghost\master\dic_eringi.txt
-ghost\master\TeaTime_ReadMe.txt
 ghost\master\dic_TeaTime.txt
 ghost\master\saori\gomi.dll
 ghost\master\CraftArts_ReadMe.txt

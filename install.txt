@@ -1,4 +1,5 @@
 charset, Shift_JIS
-type,ghost
 name,‘t‚Å‚é“úí‚Ì‰¹F
+type,ghost
 directory,kanade_2nd
+refresh,0

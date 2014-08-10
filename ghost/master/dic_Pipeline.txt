@@ -1,0 +1,621 @@
+＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
+＃
+＃　奏でる日常の音色　配管ゲーム
+＃
+＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
+
+＊配管ゲームメニュー
+：\b[2]（５）配管パズルゲームの時間ですよ！
+\_q
+■ルール■
+右上のスタートから左下のゴールまでパイプをつなげよう！
+パイプをクリックすると時計回りに回転できるよ。
+完成するとポイントゲット！
+複雑なほど高得点！
+
+
+\![*]\q[おてがるレベル　制限時間１分,配管ゲームおてがるレベル]
+ハイスコア:　（配管ゲームおてがるレベルハイスコア）点
+
+\![*]\q[ぽちぽちレベル　制限時間２分,配管ゲームぽちぽちレベル]
+ハイスコア:　（配管ゲームぽちぽちレベルハイスコア）点
+
+\![*]\q[じっくりレベル　制限時間３分,配管ゲームじっくりレベル]
+ハイスコア:　（配管ゲームじっくりレベルハイスコア）点
+
+\![*]\q[エンドレスで練習,配管ゲームエンドレス]
+\![*]\q[とじる,メインメニューを閉じる]
+
+＊配管ゲームおてがるレベル
+＄配管ゲーム制限時間設定	1
+＄配管ゲーム制限時間タイマ	６０
+＄ハイスコア更新対象変数	配管ゲームおてがるレベルハイスコア
+＞配管ゲームスタート
+
+＊配管ゲームぽちぽちレベル
+＄配管ゲーム制限時間設定	1
+＄配管ゲーム制限時間タイマ	１２０
+＄ハイスコア更新対象変数	配管ゲームぽちぽちレベルハイスコア
+＞配管ゲームスタート
+
+＊配管ゲームじっくりレベル
+＄配管ゲーム制限時間設定	1
+＄配管ゲーム制限時間タイマ	１８０
+＄ハイスコア更新対象変数	配管ゲームじっくりレベルハイスコア
+＞配管ゲームスタート
+
+＊配管ゲームエンドレス
+＄配管ゲーム制限時間設定	0
+＞配管ゲームスタート
+
+＊配管ゲーム制限時間
+
+＊配管ゲームをやめる
+＞配管ゲームメニュー	（配管合計スコア）==0
+：（５）おつかれさま！\w6
+ただいまのスコアは\w3…\w8
+
+（配管合計スコア）点！\w8　またチャレンジしてね。
+\x
+＞配管ゲームメニュー
+
+
+＊配管ゲームスタート
+＄nop	（InitPipeline）
+＄nop	（InitWaterlineLog）
+＄配管合計スコア	0
+：\t\b[2]\c
+（DrawPipeline）
+
+＊配管ゲーム制限時間終了
+＄配管ゲームハイスコア更新	（when,（（ハイスコア更新対象変数））<（配管合計スコア）,1,0）
+：（５）そこまでっ！\w9
+ただいまのスコアは\w3…\w8
+（when,（配管ゲームハイスコア更新）,（set,（ハイスコア更新対象変数）,（配管合計スコア）））
+（配管合計スコア）点！\w8　（when,（配管ゲームハイスコア更新）,\nハイスコア更新！ おめでとう！,またチャレンジしてね。）
+\x
+＞配管ゲームメニュー
+
+＊OnPipeClick
+＞配管ゲーム制限時間終了	（配管ゲーム制限時間タイマ）<=0&&（配管ゲーム制限時間設定）
+＄nop	（InitWaterlineLog）
+＄PipelineRotate（Ｒ０）（Ｒ１）	（NextRotate_（PipelineRotate（Ｒ０）（Ｒ１）））
+＄nop	（CheckWaterlineStart）
+\tφ
+（when,（IsCleared）,（DrawPipelineCleared）\1（set,配管獲得スコア,（CalcScore））（set,配管合計スコア,（calc,（配管合計スコア）+（配管獲得スコア）））（配管獲得スコア） 点　獲得！\n合計スコア: （配管合計スコア）点,（DrawPipeline））
+（when,（IsCleared）,（ToNextStage））
+
+＠ToNextStage
+\w9\w9\w9\![raise,OnNextStage]
+
+＊OnNextStage
+＞配管ゲーム制限時間終了	（配管ゲーム制限時間タイマ）<=0&&（配管ゲーム制限時間設定）
+＄nop	（InitPipeline）
+（DrawPipeline）
+
+＃パイプをクリックすると発生するイベントです。
+＃Ｒ０: パイプX座標
+＃Ｒ１: パイプY座標
+
+＊DrawPipeline
+＄スクリプトの一番頭	\C
+\0\_l[0,0]\*φ
+\__q[OnPipeClick,0,0]\_b[（PipeImage0（PipelineType00）（PipelineRotate00））,inline,opaque]\__qφ
+\__q[OnPipeClick,1,0]\_b[（PipeImage0（PipelineType10）（PipelineRotate10））,inline,opaque]\__qφ
+\__q[OnPipeClick,2,0]\_b[（PipeImage0（PipelineType20）（PipelineRotate20））,inline,opaque]\__qφ
+\__q[OnPipeClick,3,0]\_b[（PipeImage0（PipelineType30）（PipelineRotate30））,inline,opaque]\__qφ
+\__q[OnPipeClick,4,0]\_b[（PipeImage0（PipelineType40）（PipelineRotate40））,inline,opaque]\__qφ
+\_b[pipeline/start.png,inline,--option=use_self_alpha]
+\__q[OnPipeClick,0,1]\_b[（PipeImage0（PipelineType01）（PipelineRotate01））,inline,opaque]\__qφ
+\__q[OnPipeClick,1,1]\_b[（PipeImage0（PipelineType11）（PipelineRotate11））,inline,opaque]\__qφ
+\__q[OnPipeClick,2,1]\_b[（PipeImage0（PipelineType21）（PipelineRotate21））,inline,opaque]\__qφ
+\__q[OnPipeClick,3,1]\_b[（PipeImage0（PipelineType31）（PipelineRotate31））,inline,opaque]\__qφ
+\__q[OnPipeClick,4,1]\_b[（PipeImage0（PipelineType41）（PipelineRotate41））,inline,opaque]\__q
+\__q[OnPipeClick,0,2]\_b[（PipeImage0（PipelineType02）（PipelineRotate02））,inline,opaque]\__qφ
+\__q[OnPipeClick,1,2]\_b[（PipeImage0（PipelineType12）（PipelineRotate12））,inline,opaque]\__qφ
+\__q[OnPipeClick,2,2]\_b[（PipeImage0（PipelineType22）（PipelineRotate22））,inline,opaque]\__qφ
+\__q[OnPipeClick,3,2]\_b[（PipeImage0（PipelineType32）（PipelineRotate32））,inline,opaque]\__qφ
+\__q[OnPipeClick,4,2]\_b[（PipeImage0（PipelineType42）（PipelineRotate42））,inline,opaque]\__q
+\__q[OnPipeClick,0,3]\_b[（PipeImage0（PipelineType03）（PipelineRotate03））,inline,opaque]\__qφ
+\__q[OnPipeClick,1,3]\_b[（PipeImage0（PipelineType13）（PipelineRotate13））,inline,opaque]\__qφ
+\__q[OnPipeClick,2,3]\_b[（PipeImage0（PipelineType23）（PipelineRotate23））,inline,opaque]\__qφ
+\__q[OnPipeClick,3,3]\_b[（PipeImage0（PipelineType33）（PipelineRotate33））,inline,opaque]\__qφ
+\__q[OnPipeClick,4,3]\_b[（PipeImage0（PipelineType43）（PipelineRotate43））,inline,opaque]\__q
+\__q[OnPipeClick,0,4]\_b[（PipeImage0（PipelineType04）（PipelineRotate04））,inline,opaque]\__qφ
+\__q[OnPipeClick,1,4]\_b[（PipeImage0（PipelineType14）（PipelineRotate14））,inline,opaque]\__qφ
+\__q[OnPipeClick,2,4]\_b[（PipeImage0（PipelineType24）（PipelineRotate24））,inline,opaque]\__qφ
+\__q[OnPipeClick,3,4]\_b[（PipeImage0（PipelineType34）（PipelineRotate34））,inline,opaque]\__qφ
+\__q[OnPipeClick,4,4]\_b[（PipeImage0（PipelineType44）（PipelineRotate44））,inline,opaque]\__q
+\__q[OnPipeClick,0,5]\_b[（PipeImage0（PipelineType05）（PipelineRotate05））,inline,opaque]\__qφ
+\__q[OnPipeClick,1,5]\_b[（PipeImage0（PipelineType15）（PipelineRotate15））,inline,opaque]\__qφ
+\__q[OnPipeClick,2,5]\_b[（PipeImage0（PipelineType25）（PipelineRotate25））,inline,opaque]\__qφ
+\__q[OnPipeClick,3,5]\_b[（PipeImage0（PipelineType35）（PipelineRotate35））,inline,opaque]\__qφ
+\__q[OnPipeClick,4,5]\_b[（PipeImage0（PipelineType45）（PipelineRotate45））,inline,opaque]\__q
+\__q[OnPipeClick,0,6]\_b[（PipeImage0（PipelineType06）（PipelineRotate06））,inline,opaque]\__qφ
+\__q[OnPipeClick,1,6]\_b[（PipeImage0（PipelineType16）（PipelineRotate16））,inline,opaque]\__qφ
+\__q[OnPipeClick,2,6]\_b[（PipeImage0（PipelineType26）（PipelineRotate26））,inline,opaque]\__qφ
+\__q[OnPipeClick,3,6]\_b[（PipeImage0（PipelineType36）（PipelineRotate36））,inline,opaque]\__qφ
+\__q[OnPipeClick,4,6]\_b[（PipeImage0（PipelineType46）（PipelineRotate46））,inline,opaque]\__q
+\_b[pipeline/goal.png,inline,--option=use_self_alpha]
+
+\![*]\q[やめる,配管ゲームをやめる]
+（when,（配管ゲーム制限時間設定）,\1\c\_q残り時間: （配管ゲーム制限時間タイマ） 秒）
+
+＊DrawPipelineCleared
+\0\b[2]\_l[0,0]φ
+\_b[（PipeImage（WaterlineLog00）（PipelineType00）（PipelineRotate00））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog10）（PipelineType10）（PipelineRotate10））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog20）（PipelineType20）（PipelineRotate20））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog30）（PipelineType30）（PipelineRotate30））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog40）（PipelineType40）（PipelineRotate40））,inline,opaque]φ
+\_b[pipeline/start.png,inline,--option=use_self_alpha]
+\_b[（PipeImage（WaterlineLog01）（PipelineType01）（PipelineRotate01））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog11）（PipelineType11）（PipelineRotate11））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog21）（PipelineType21）（PipelineRotate21））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog31）（PipelineType31）（PipelineRotate31））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog41）（PipelineType41）（PipelineRotate41））,inline,opaque]
+\_b[（PipeImage（WaterlineLog02）（PipelineType02）（PipelineRotate02））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog12）（PipelineType12）（PipelineRotate12））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog22）（PipelineType22）（PipelineRotate22））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog32）（PipelineType32）（PipelineRotate32））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog42）（PipelineType42）（PipelineRotate42））,inline,opaque]
+\_b[（PipeImage（WaterlineLog03）（PipelineType03）（PipelineRotate03））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog13）（PipelineType13）（PipelineRotate13））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog23）（PipelineType23）（PipelineRotate23））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog33）（PipelineType33）（PipelineRotate33））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog43）（PipelineType43）（PipelineRotate43））,inline,opaque]
+\_b[（PipeImage（WaterlineLog04）（PipelineType04）（PipelineRotate04））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog14）（PipelineType14）（PipelineRotate14））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog24）（PipelineType24）（PipelineRotate24））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog34）（PipelineType34）（PipelineRotate34））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog44）（PipelineType44）（PipelineRotate44））,inline,opaque]
+\_b[（PipeImage（WaterlineLog05）（PipelineType05）（PipelineRotate05））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog15）（PipelineType15）（PipelineRotate15））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog25）（PipelineType25）（PipelineRotate25））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog35）（PipelineType35）（PipelineRotate35））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog45）（PipelineType45）（PipelineRotate45））,inline,opaque]
+\_b[（PipeImage（WaterlineLog06）（PipelineType06）（PipelineRotate06））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog16）（PipelineType16）（PipelineRotate16））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog26）（PipelineType26）（PipelineRotate26））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog36）（PipelineType36）（PipelineRotate36））,inline,opaque]φ
+\_b[（PipeImage（WaterlineLog46）（PipelineType46）（PipelineRotate46））,inline,opaque]
+\_b[pipeline/goal.png,inline,--option=use_self_alpha]
+
+＠CalcScore
+（calc,50+φ
+（WaterlineLog00）+φ
+（WaterlineLog10）+φ
+（WaterlineLog20）+φ
+（WaterlineLog30）+φ
+（WaterlineLog40）+φ
+（WaterlineLog01）+φ
+（WaterlineLog11）+φ
+（WaterlineLog21）+φ
+（WaterlineLog31）+φ
+（WaterlineLog41）+φ
+（WaterlineLog02）+φ
+（WaterlineLog12）+φ
+（WaterlineLog22）+φ
+（WaterlineLog32）+φ
+（WaterlineLog42）+φ
+（WaterlineLog03）+φ
+（WaterlineLog13）+φ
+（WaterlineLog23）+φ
+（WaterlineLog33）+φ
+（WaterlineLog43）+φ
+（WaterlineLog04）+φ
+（WaterlineLog14）+φ
+（WaterlineLog24）+φ
+（WaterlineLog34）+φ
+（WaterlineLog44）+φ
+（WaterlineLog05）+φ
+（WaterlineLog15）+φ
+（WaterlineLog25）+φ
+（WaterlineLog35）+φ
+（WaterlineLog45）+φ
+（WaterlineLog06）+φ
+（WaterlineLog16）+φ
+（WaterlineLog26）+φ
+（WaterlineLog36）+φ
+（WaterlineLog46）φ
+）
+
+
+
+＃パイプラインの描画イベントです。
+＃ゴリ押しです。
+＃\b[2]で開かれたバルーンが必要です。
+
+
+
+＊InitPipeline
+＄PipelineType00	（GetRandomPipeType）
+＄PipelineType10	（GetRandomPipeType）
+＄PipelineType20	（GetRandomPipeType）
+＄PipelineType30	（GetRandomPipeType）
+＄PipelineType40	（GetRandomPipeType）
+＄PipelineType01	（GetRandomPipeType）
+＄PipelineType11	（GetRandomPipeType）
+＄PipelineType21	（GetRandomPipeType）
+＄PipelineType31	（GetRandomPipeType）
+＄PipelineType41	（GetRandomPipeType）
+＄PipelineType02	（GetRandomPipeType）
+＄PipelineType12	（GetRandomPipeType）
+＄PipelineType22	（GetRandomPipeType）
+＄PipelineType32	（GetRandomPipeType）
+＄PipelineType42	（GetRandomPipeType）
+＄PipelineType03	（GetRandomPipeType）
+＄PipelineType13	（GetRandomPipeType）
+＄PipelineType23	（GetRandomPipeType）
+＄PipelineType33	（GetRandomPipeType）
+＄PipelineType43	（GetRandomPipeType）
+＄PipelineType04	（GetRandomPipeType）
+＄PipelineType14	（GetRandomPipeType）
+＄PipelineType24	（GetRandomPipeType）
+＄PipelineType34	（GetRandomPipeType）
+＄PipelineType44	（GetRandomPipeType）
+＄PipelineType05	（GetRandomPipeType）
+＄PipelineType15	（GetRandomPipeType）
+＄PipelineType25	（GetRandomPipeType）
+＄PipelineType35	（GetRandomPipeType）
+＄PipelineType45	（GetRandomPipeType）
+＄PipelineType06	（GetRandomPipeType）
+＄PipelineType16	（GetRandomPipeType）
+＄PipelineType26	（GetRandomPipeType）
+＄PipelineType36	（GetRandomPipeType）
+＄PipelineType46	（GetRandomPipeType）
+＄PipelineType07	（GetRandomPipeType）
+＄PipelineType17	（GetRandomPipeType）
+＄PipelineType27	（GetRandomPipeType）
+＄PipelineType37	（GetRandomPipeType）
+＄PipelineType47	（GetRandomPipeType）
+＄PipelineRotate00	（GetRandomPipeRotate）
+＄PipelineRotate10	（GetRandomPipeRotate）
+＄PipelineRotate20	（GetRandomPipeRotate）
+＄PipelineRotate30	（GetRandomPipeRotate）
+＄PipelineRotate40	（GetRandomPipeRotate）
+＄PipelineRotate01	（GetRandomPipeRotate）
+＄PipelineRotate11	（GetRandomPipeRotate）
+＄PipelineRotate21	（GetRandomPipeRotate）
+＄PipelineRotate31	（GetRandomPipeRotate）
+＄PipelineRotate41	（GetRandomPipeRotate）
+＄PipelineRotate02	（GetRandomPipeRotate）
+＄PipelineRotate12	（GetRandomPipeRotate）
+＄PipelineRotate22	（GetRandomPipeRotate）
+＄PipelineRotate32	（GetRandomPipeRotate）
+＄PipelineRotate42	（GetRandomPipeRotate）
+＄PipelineRotate03	（GetRandomPipeRotate）
+＄PipelineRotate13	（GetRandomPipeRotate）
+＄PipelineRotate23	（GetRandomPipeRotate）
+＄PipelineRotate33	（GetRandomPipeRotate）
+＄PipelineRotate43	（GetRandomPipeRotate）
+＄PipelineRotate04	（GetRandomPipeRotate）
+＄PipelineRotate14	（GetRandomPipeRotate）
+＄PipelineRotate24	（GetRandomPipeRotate）
+＄PipelineRotate34	（GetRandomPipeRotate）
+＄PipelineRotate44	（GetRandomPipeRotate）
+＄PipelineRotate05	（GetRandomPipeRotate）
+＄PipelineRotate15	（GetRandomPipeRotate）
+＄PipelineRotate25	（GetRandomPipeRotate）
+＄PipelineRotate35	（GetRandomPipeRotate）
+＄PipelineRotate45	（GetRandomPipeRotate）
+＄PipelineRotate06	（GetRandomPipeRotate）
+＄PipelineRotate16	（GetRandomPipeRotate）
+＄PipelineRotate26	（GetRandomPipeRotate）
+＄PipelineRotate36	（GetRandomPipeRotate）
+＄PipelineRotate46	（GetRandomPipeRotate）
+＄PipelineRotate07	（GetRandomPipeRotate）
+＄PipelineRotate17	（GetRandomPipeRotate）
+＄PipelineRotate27	（GetRandomPipeRotate）
+＄PipelineRotate37	（GetRandomPipeRotate）
+＄PipelineRotate47	（GetRandomPipeRotate）
+
+＃パイプラインを初期化します
+
+＊InitWaterlineLog
+＄WaterlineLog00	0
+＄WaterlineLog10	0
+＄WaterlineLog20	0
+＄WaterlineLog30	0
+＄WaterlineLog40	0
+＄WaterlineLog01	0
+＄WaterlineLog11	0
+＄WaterlineLog21	0
+＄WaterlineLog31	0
+＄WaterlineLog41	0
+＄WaterlineLog02	0
+＄WaterlineLog12	0
+＄WaterlineLog22	0
+＄WaterlineLog32	0
+＄WaterlineLog42	0
+＄WaterlineLog03	0
+＄WaterlineLog13	0
+＄WaterlineLog23	0
+＄WaterlineLog33	0
+＄WaterlineLog43	0
+＄WaterlineLog04	0
+＄WaterlineLog14	0
+＄WaterlineLog24	0
+＄WaterlineLog34	0
+＄WaterlineLog44	0
+＄WaterlineLog05	0
+＄WaterlineLog15	0
+＄WaterlineLog25	0
+＄WaterlineLog35	0
+＄WaterlineLog45	0
+＄WaterlineLog06	0
+＄WaterlineLog16	0
+＄WaterlineLog26	0
+＄WaterlineLog36	0
+＄WaterlineLog46	0
+
+＠GetRandomPipeType
+STRAIGHT
+CURVE
+THREE
+
+＠GetRandomPipeRotate
+0
+90
+180
+270
+
+＠NextRotate_0
+90
+
+＠NextRotate_90
+180
+
+＠NextRotate_180
+270
+
+＠NextRotate_270
+0
+
+
+＠PipeImage0STRAIGHT0
+pipeline/st_0.png
+
+＠PipeImage0STRAIGHT90
+pipeline/st_1.png
+
+＠PipeImage0STRAIGHT180
+pipeline/st_2.png
+
+＠PipeImage0STRAIGHT270
+pipeline/st_3.png
+
+＠PipeImage0CURVE0
+pipeline/cu_0.png
+
+＠PipeImage0CURVE90
+pipeline/cu_1.png
+
+＠PipeImage0CURVE180
+pipeline/cu_2.png
+
+＠PipeImage0CURVE270
+pipeline/cu_3.png
+
+＠PipeImage0THREE0
+pipeline/tr_0.png
+
+＠PipeImage0THREE90
+pipeline/tr_1.png
+
+＠PipeImage0THREE180
+pipeline/tr_2.png
+
+＠PipeImage0THREE270
+pipeline/tr_3.png
+
+＃ここらクリア時の色
+＠PipeImage1STRAIGHT0
+pipeline/w_st_0.png
+
+＠PipeImage1STRAIGHT90
+pipeline/w_st_1.png
+
+＠PipeImage1STRAIGHT180
+pipeline/w_st_2.png
+
+＠PipeImage1STRAIGHT270
+pipeline/w_st_3.png
+
+＠PipeImage1CURVE0
+pipeline/w_cu_0.png
+
+＠PipeImage1CURVE90
+pipeline/w_cu_1.png
+
+＠PipeImage1CURVE180
+pipeline/w_cu_2.png
+
+＠PipeImage1CURVE270
+pipeline/w_cu_3.png
+
+＠PipeImage1THREE0
+pipeline/w_tr_0.png
+
+＠PipeImage1THREE90
+pipeline/w_tr_1.png
+
+＠PipeImage1THREE180
+pipeline/w_tr_2.png
+
+＠PipeImage1THREE270
+pipeline/w_tr_3.png
+
+
+＃パイプの水を流せる方向を定義。0: 不可 1:可
+＠PipelineRootSTRAIGHT0上
+1
+
+＠PipelineRootSTRAIGHT0右
+0
+
+＠PipelineRootSTRAIGHT0下
+1
+
+＠PipelineRootSTRAIGHT0左
+0
+
+＠PipelineRootSTRAIGHT90上
+0
+
+＠PipelineRootSTRAIGHT90右
+1
+
+＠PipelineRootSTRAIGHT90下
+0
+
+＠PipelineRootSTRAIGHT90左
+1
+
+＠PipelineRootSTRAIGHT180上
+1
+
+＠PipelineRootSTRAIGHT180右
+0
+
+＠PipelineRootSTRAIGHT180下
+1
+
+＠PipelineRootSTRAIGHT180左
+0
+
+＠PipelineRootSTRAIGHT270上
+0
+
+＠PipelineRootSTRAIGHT270右
+1
+
+＠PipelineRootSTRAIGHT270下
+0
+
+＠PipelineRootSTRAIGHT270左
+1
+
+＠PipelineRootCURVE0上
+1
+
+＠PipelineRootCURVE0右
+1
+
+＠PipelineRootCURVE0下
+0
+
+＠PipelineRootCURVE0左
+0
+
+＠PipelineRootCURVE90上
+0
+
+＠PipelineRootCURVE90右
+1
+
+＠PipelineRootCURVE90下
+1
+
+＠PipelineRootCURVE90左
+0
+
+＠PipelineRootCURVE180上
+0
+
+＠PipelineRootCURVE180右
+0
+
+＠PipelineRootCURVE180下
+1
+
+＠PipelineRootCURVE180左
+1
+
+＠PipelineRootCURVE270上
+1
+
+＠PipelineRootCURVE270右
+0
+
+＠PipelineRootCURVE270下
+0
+
+＠PipelineRootCURVE270左
+1
+
+＠PipelineRootTHREE0上
+1
+
+＠PipelineRootTHREE0右
+1
+
+＠PipelineRootTHREE0下
+0
+
+＠PipelineRootTHREE0左
+1
+
+＠PipelineRootTHREE90上
+1
+
+＠PipelineRootTHREE90右
+1
+
+＠PipelineRootTHREE90下
+1
+
+＠PipelineRootTHREE90左
+0
+
+＠PipelineRootTHREE180上
+0
+
+＠PipelineRootTHREE180右
+1
+
+＠PipelineRootTHREE180下
+1
+
+＠PipelineRootTHREE180左
+1
+
+＠PipelineRootTHREE270上
+1
+
+＠PipelineRootTHREE270右
+0
+
+＠PipelineRootTHREE270下
+1
+
+＠PipelineRootTHREE270左
+1
+
+＊CheckWaterlineStart
+＄IsCleared	（call,CheckWaterline,4,0,右）
+
+＃スタートからゴールまでパイプがつながっているかチェックします。
+＃進入地点:4,0 左
+＃最終地点:0,6 下 → 0,7
+＃
+
+＠CheckWaterline
+（set,nop,座標（Ａ０）（Ａ１）　進入 （Ａ２））φ
+（when,（Ａ０）==0&&（Ａ１）==7,1,φ
+（when,（Ａ１）>6||（Ａ１）<0||（Ａ０）<0||（Ａ０）>4||（WaterlineLog（Ａ０）（Ａ１））!=0,0,φ
+（when,（PipelineRoot（PipelineType（Ａ０）（Ａ１））（PipelineRotate（Ａ０）（Ａ１））（Ａ２））,（set,WaterlineLog（Ａ０）（Ａ１）,1）φ
+（when,
+（when,（Ａ２）!=上&&（PipelineRoot（PipelineType（Ａ０）（Ａ１））（PipelineRotate（Ａ０）（Ａ１））上）,（call,CheckWaterline,（Ａ０）,（calc,（Ａ１）-1）,下）,0）φ
+||（when,（Ａ２）!=下&&（PipelineRoot（PipelineType（Ａ０）（Ａ１））（PipelineRotate（Ａ０）（Ａ１））下）,（call,CheckWaterline,（Ａ０）,（calc,（Ａ１）+1）,上）,0）φ
+||（when,（Ａ２）!=右&&（PipelineRoot（PipelineType（Ａ０）（Ａ１））（PipelineRotate（Ａ０）（Ａ１））右）,（call,CheckWaterline,（calc,（Ａ０）+1）,（Ａ１）,左）,0）φ
+||（when,（Ａ２）!=左&&（PipelineRoot（PipelineType（Ａ０）（Ａ１））（PipelineRotate（Ａ０）（Ａ１））左）,（call,CheckWaterline,（calc,（Ａ０）-1）,（Ａ１）,右）,0）φ
+,1,0）φ
+,0）φ
+）φ
+）
+
+
+＃進入可能かチェック。
+＃進入可能なら続けて出口方向に探索を再帰する
+

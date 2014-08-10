@@ -1,4 +1,5 @@
 charset,Shift_JIS
+//satolist.palette.offset,50,25
 
 descript
 {
@@ -68,6 +69,7 @@ collision14,173,180,199,236,Lribbon
 
 surface2
 {
+//satolist.palette.offset,50,50
 0interval,sometimes
 0pattern0,102,30,overlay,0,0
 0pattern1,103,15,overlay,0,0
@@ -182,6 +184,7 @@ element1,overlay,surface6x.png,0,0
 
 surface7
 {
+//satolist.palette.offset,50,70
 0interval,sometimes
 0pattern0,107,30,overlay,0,0
 0pattern1,108,15,overlay,0,0
