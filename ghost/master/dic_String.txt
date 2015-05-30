@@ -31,7 +31,6 @@ readme.txtの表示(&R)
 ＃変更中
 ＠homeurl
 http://nanachi.sakura.ne.jp/kanade_2nd/
-
 ＠通常更新先
 http://nanachi.sakura.ne.jp/kanade/
 
@@ -56,13 +55,17 @@ http://hope.freespace.jp/nanachi/kanade/
 ＃http://～ 
 ＃バナー（あれば） 
 
+＊sakura.portalsites
+作者サイト
+http://nanachi.sakura.ne.jp/index.html
 
 ＊sakura.portalsites
 作者ブログ（更新履歴など）
 http://ukananachi.blog98.fc2.com/
 
+
 ＊sakura.portalsites
-奏のTwitter
+奏のTwitterBot
 https://twitter.com/#!/kanade_ghost
 
 ＊sakura.recommendsites

@@ -511,6 +511,7 @@ Version: （お茶会バージョン） / "（お茶会かっこつけのバージョンタイトル）"\n\n表
 \![*]\q[花咲案内人,http://rimuhamate.sakura.ne.jp/]
 \![*]\q[でゅあるにしき,http://rimuhamate.sakura.ne.jp/]
 \![*]\q[らきあ with ほしうにゅう,http://etwasin.blog.fc2.com/]
+\![*]\q[無限遠,http://hwm3.gyao.ne.jp/shiroi-niwatori/quispiam_est.htm]
 
 \![*]\q[もどる,お茶会についていろいろ]
 \![*]\q[とじる,メインメニューを閉じる]

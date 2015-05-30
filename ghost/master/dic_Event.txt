@@ -167,6 +167,7 @@
 ＊OnSatoriLoad
 ＄nop	（下着設定）
 ＄nop	（メニューボードサーフェス設定）
+＄nop	（music,hwnd,（hwnd_raw））
 ＄nop	（core,set_shell,（現在のシェルのパス））
 ＄トークモード	ランダムトーク
 ＄文「ランダムトーク」の重複回避	有効、起動中

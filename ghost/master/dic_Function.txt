@@ -168,7 +168,7 @@
 ＄出力スクリプト	（Ｒ０）
 ＄出力スクリプト	（core（sprintf,%c,6）translate（sprintf,%c,6）（出力スクリプト））
 ＄出力スクリプト	（when,（ボクっ娘）==有効,（replace（sprintf,%c,6）（出力スクリプト）（sprintf,%c,6）私（sprintf,%c,6）ボク）,（出力スクリプト））
-：（出力スクリプト）\e（core,get_last_transtale_log）
+：（出力スクリプト）＃\e（core,get_last_transtale_log）
 
 ＠現在季節	（現在月）==１||（現在月）==２||（現在月）==３||（現在月）==１２
 冬
