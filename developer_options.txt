@@ -14,6 +14,9 @@ ghost\master\kanade_core.txt,nonar,noupdate
 shell\mini_kanade,nonar,noupdate
 ghost\master\dic_satolist_debug.txt,nonar,noupdate
 shell/waltz/,nonar,noupdate
+ghost/master/cs/,nonar,noupdate
+ghost\master\replace.txt,nonar,noupdate
+ghost\master\replace_after.txt,nonar,noupdate
 //旧バージョンで不要となるファイル
 //セーブデータの除外設定。narや、更新ファイル作成時に巻き込みたくないファイルの名前を書く。
 //ただし、SSP専用。

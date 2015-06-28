@@ -155,4 +155,3 @@ weather,kanade_core.dll,weather
 erase_tag,kanade_core.dll,erase_tag
 shell_info,kanade_core.dll,get_shell_info
 bln,saori/bln.dll
-cs,cs/csruntime.dll
