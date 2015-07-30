@@ -206,3 +206,5 @@
 （現在月）==6
 ＠コミュ終了
 （when,（特定コミュで終了）!=無効,\-）
+＊OnStartParticle
+＄nop	（when,（SAORI「particle」の存在）==0,（load_saori,particle,saori/particle.dll,window））（particle,（ssu,zen2han,（本体ハンドル0））,（ssu,zen2han,（バルーンハンドル0）））

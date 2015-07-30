@@ -291,6 +291,10 @@ Min （call,音楽再生メニュー音量ボタン,0,10）（call,音楽再生メニュー音量ボタン,10
 ＊hwnd
 ＄hwnd_raw	（Ｒ０）
 ＄nop	（music,hwnd,（Ｒ０））
+（ssu,split,（Ｒ０）,（ssu,sprintf,%c,1））
+＄本体ハンドル0＝（Ｓ０）
+（ssu,split,（Ｒ１）,（ssu,sprintf,%c,1））
+＄バルーンハンドル0＝（Ｓ０）
 
 
 ＃メニューボード上の操作パネル

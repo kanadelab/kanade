@@ -17,7 +17,7 @@ sstp.allowunspecifiedsend,1
 sstp.allowcommunicate,1
 sstp.alwaystranslate,0
 name.allowoverrid,1
-shiori.cache,1
+shiori.cache,0
 shiori.encoding,0
 don't need onmousemove,0
 don't need bind,0
