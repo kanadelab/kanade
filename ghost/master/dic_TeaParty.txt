@@ -162,7 +162,7 @@ Second Flush
 （１）ケーキの定番っていえばやっぱりイチゴだよね。\w8
 
 （５）さあーって、頂いちゃいますか！\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （５）んーっ！\w9
 （２０）甘酸っぱい…\w3！\w8
@@ -176,7 +176,7 @@ Second Flush
 ：（０）今日はクッキーだよ。\w7
 （５）手作りしてみたんだ。お口にあうかな？\w6
 コーヒーと一緒にどうぞ。\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （１）うん、なかなか美味しくできてる。\w5
 （５）コーヒーとも相性バッチリだね。\w9\w9
@@ -193,7 +193,7 @@ Second Flush
 （１）美味しそうだったからお店でいろいろ買っちゃった。\w9
 
 さてさて、\w3早速頂いちゃいますか。\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （５）うーん、\w3美味しい。\w7
 
@@ -208,7 +208,7 @@ Second Flush
 
 （６）紅茶に定番のお菓子とは思うけど結構食べたこと無いって人いるみたいね。\w5
 （０）初めて食べるって人はこの機に味わってみてね。\w5（１）美味しいから。\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （５）うんうん、\w3これこれ！\w6
 （１）さくっとしててクリームも美味しいな。\w9
@@ -223,7 +223,7 @@ Second Flush
 美味しい緑茶と、\w3（５）わらびもち。\w8
 
 （２５）きなことくろみつで召し上がれ。\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （１）美味しい…\w3！\w8
 わらびもちって、\w3見た目も透き通っててとってもきれいだよね。\x
@@ -239,7 +239,7 @@ Second Flush
 このレアチーズケーキを口にできるなんてね。\w8
 
 （０）さて、\w3と、\w3 （５）頂いちゃいましょーかね。\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （１）ん～♪\w7
 すーっと溶けてく上品な甘さとサクサクなクッキー生地！\w6
@@ -254,7 +254,7 @@ Second Flush
 
 （０）ま、\w3いいや。\w5
 （５）はやく食べよ！\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （２５）…\w3うん、\w3（５）美味しい。\w5
 春の名物とはいえいつ食べても美味しいね。\w8
@@ -268,7 +268,7 @@ Second Flush
 （１）お砂糖と卵たっぷりで作ったの。\w9
 
 （５）さ、\w3食べよ食べよ！\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （１）へへ、\w3ふわふわ、\w3とろとろでとっても美味しい。\w9
 （５）やっぱり手作りは作るときと食べる時と２回楽しめていいね。\x
@@ -282,7 +282,7 @@ Second Flush
 リンゴの食感がこんなに変わっちゃうなんて。\w9\w9
 
 …\w3さて、\w5（５）いっただっきまーっす！\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,（お茶会飲み物）,（お茶会お菓子）,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,（実行したお茶会のバージョン）,（お茶会飲み物）,（お茶会お菓子）]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （１）うーん、\w3生地はさくさく。\w5中はとろとろ。\w8
 シナモンの香りも良いね。\w9
@@ -295,7 +295,7 @@ Second Flush
 
 （２０）ついに\w3… \w5この\w3…　\w9（５）特製クリスマスケーキを食べる時が来たぞー！\w5
 もう我慢できないもんね！\x
-\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,紅茶,クリスマスケーキ,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,1,紅茶,クリスマスケーキ]
+\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaTime,紅茶,クリスマスケーキ,1,1]\![raiseother,__SYSTEM_ALL_GHOST__,OnKanadeTeaParty,1,紅茶,クリスマスケーキ]
 （０）・\w5・\w5・\w5・\w5・\w5・\w5・\w5・\w5
 （５）うーん！\w5　おいしーっ！\w9
 クリスマスとか、\w3特別な日に食べるケーキってやっぱり味も格別だよねー！\w9
