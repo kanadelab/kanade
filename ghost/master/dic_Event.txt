@@ -105,6 +105,7 @@
 ＊OnChoiceSelectEx
 ＄nop	（split,（Ｒ１）,（sprintf,%c,1））
 ＞（Ｓ０）
+＞処理終了	（vncall,compare_head,Ｓ０,http）
 ＄nop	（list,push_front,選択肢エラーログ発生日時,（現在年）年（現在月）月（現在日）日　（現在時）時（現在分）分（現在秒）秒）
 ＄nop	（list,push_front,選択肢エラーログラベル,（Ｒ０））
 ＄nop	（when,（list,size,選択肢エラーログ発生日時）>5,（list,pop_back,選択肢エラーログ発生日時））
@@ -115,6 +116,10 @@
 ＃メインメニューからも報告できるよ。
 
 ＃選択肢タイムアウト
+
+＃＃＃インラインイベント
+＠http
+http
 ＊OnChoiceTimeout
 ：（０）見てない？
 
