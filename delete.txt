@@ -2,6 +2,8 @@ ghost\master\satorite.exe
 ghost\master\satorite.dat
 ghost\master\‚ê‚µ‚Î.exe
 ghost\master\TeaTime_ReadMe.txt
+ghost\master\replace.txt
+ghost\master\replace_after.txt
 ghost\master\dic_Tolk.txt
 ghost\master\delete.txt
 ghost\master\tork.txt
@@ -18,8 +20,6 @@ ghost\master\dic_Talk.txt
 ghost\master\efb.png
 ghost\master\dic_import.txt
 ghost\master\dic_ExEvent.txt
-ghost\master\replace.txt
-ghost\master\replace_after.txt
 ghost\master\dic_yd.txt
 ghost\master\dic_ds.txt
 ghost\master\dic_Response.txt

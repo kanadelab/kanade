@@ -28,15 +28,6 @@ readme.txtの表示(&R)
 1 
 
 
-＃変更中
-＠homeurl
-http://nanachi.sakura.ne.jp/kanade_2nd/
-＠通常更新先
-http://nanachi.sakura.ne.jp/kanade/
-
-＠旧更新先
-http://hope.freespace.jp/nanachi/kanade/
-
 ＠username
 （ユーザ名） 
 

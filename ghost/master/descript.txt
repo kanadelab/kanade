@@ -4,6 +4,7 @@ type,ghost
 craftman,nanachi
 craftmanw,ななっち
 craftmanurl,http://nanachi.sakura.ne.jp/index.html
+homeurl,http://nanachi.sakura.ne.jp/kanade_2nd/
 readme,readme.txt
 sakura.name,かなで
 kero.name,メニューボード
